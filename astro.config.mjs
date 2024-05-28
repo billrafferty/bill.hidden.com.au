@@ -7,5 +7,5 @@ import icon from "astro-icon";
 export default defineConfig({
 	integrations: [tailwind(), icon()],
 	site: "https://bill.hidden.com.au",
-	base: "https://github.com/billrafferty/bill.hidden.com.au.git",
+	base: "/",
 });
