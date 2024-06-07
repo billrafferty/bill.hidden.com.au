@@ -7,107 +7,162 @@ import { Icon } from "astro-icon/components";
 <Layout title="Welcome to Astro.">
   <main>
     <Icon name="logo" />
-    <h1>👋 Welcome to my <span class="text-gradient">links page</span></h1>
+    <h1>
+      Bill Rafferty's <span class="text-gradient"
+        ><a
+          href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+          target="_blank">URI</a
+        > links</span
+      >
+    </h1>
     <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+      Please click any link bellow... <em>obvs!</em>
+      <ul role="list" class="link-Links-grid">
+        <Links
+          href="tel:+61455722811"
+          title="Call my mobile phone"
+          body="Call me in Sydney (GMT+10) on my mobile 0455 722 811"
+          icon="simple-icons:viber"
+        />
+        <Links
+          href="mailto:bill.rafferty@gmail.com"
+          title="bill.rafferty@gmail.com"
+          body="My personal email address"
+          icon="simple-icons:gmail"
+        />
+        <Links
+          href="https://github.com/billrafferty"
+          title="My Github page"
+          body="Come check out my code and projects."
+          icon="simple-icons:github"
+        />
+        <Links
+          href="https://twitter.com/bulltwitting"
+          title="@bulltwitting"
+          body="I don't want to call it X #Ex-Twitter"
+          icon="simple-icons:twitter"
+        />
+        <Links
+          href="https://www.threads.net/@bullrafferty"
+          title="@bullrafferty"
+          body="Threads is meta but at least it's not Elon"
+          icon="simple-icons:threads"
+        />
+        <Links
+          href="https://www.instagram.com/bullrafferty"
+          title="Instagram"
+          body="Threads is meta but at least it's not Elon"
+          icon="simple-icons:instagram"
+        />
+        <Links
+          href="https://hidden.online/linkedin"
+          title="Linkedin"
+          body="My work professional network"
+          icon="simple-icons:linkedin"
+        />
+        <Links
+          href="https://www.hidden.com.au"
+          title="Hidden Industries"
+          body="My independent digital agency based in Sydney, Australia"
+          icon="simple-icons:aiohttp"
+        />
+        <Links
+          href="https://code4.au/"
+          title="Code4"
+          body="Data Intelligence, web and App devleopment"
+          icon="simple-icons:aiohttp"
+        />
+        <Links
+          href="https://www.boomedia.com.au/"
+          title="Boo Media Pty Ltd"
+          body="Marketing an media agency"
+          icon="simple-icons:aiohttp"
+        />
+        <Links
+          href="https://hidden.online"
+          title="Enter the Matrix"
+          body="Follow the white rabit..."
+          icon="simple-icons:htop"
+        />
+        <Links
+          href="https://bill.hidden.com.au"
+          title="bill.hidden.com.au"
+          body="The repo for this page hosted on Github page and build with Astro"
+          icon="simple-icons:astro"
+        />
+      </ul>
     </p>
-    <ul role="list" class="link-Links-grid">
-      <Links
-        href="https://github.com/billrafferty"
-        title="Github Profile page"
-        body="Learn how Astro works and explore the official API docs."
-        icon="simple-icons:github"
-      />
-      <Links
-        href="https://twitter.com/bulltwitting"
-        title="@bulltwitting"
-        body="I don't want to call it bloody X"
-        icon="simple-icons:twitter"
-      />
-      <Links
-        href="https://hidden.online"
-        title="Enter the Matrix"
-        body="Follow the white rabit..."
-        icon="simple-icons:htop"
-      />
-      <Links
-        href="mailto:bill@hidden.com.au"
-        title="bill@hidden.com.au"
-        body="Email me 📬"
-        icon="simple-icons:gmail"
-      />
-    </ul>
   </main>
-</Layout>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-    text-shadow: 2px 1px 15px rgba(16, 237, 8, 0.3);
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-    text-shadow: 2px 1px 15px rgba(16, 237, 8, 0.4);
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-Links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-  [data-icon="logo"] {
-    font-size: 6rem;
-    color: var(--brand-color);
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .astro-a {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 220px;
+      height: auto;
+      z-index: -1;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 1em;
+      text-shadow: 2px 1px 15px rgba(16, 237, 8, 0.3);
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+      text-shadow: 2px 1px 15px rgba(16, 237, 8, 0.4);
+    }
+    .instructions {
+      text-align: center;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(var(--accent-light), 25%);
+      background: linear-gradient(
+        rgba(var(--accent-dark), 66%),
+        rgba(var(--accent-dark), 33%)
+      );
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .instructions code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background: rgba(var(--accent-light), 12%);
+      color: rgb(var(--accent-light));
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent-light));
+    }
+    .link-Links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+    [data-icon="logo"] {
+      font-size: 6rem;
+      color: var(--brand-color);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+    }
+  </style>
+</Layout>

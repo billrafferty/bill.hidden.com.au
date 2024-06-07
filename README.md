@@ -1,4 +1,4 @@
-# Hi 👋 I'm Bill Rafferty
+# Astro build page of Bill Rafferty's web links
 
 ```sh
 pnpm create astro@latest -- --template basics
