@@ -1,5 +1,7 @@
 # Astro build page of Bill Rafferty's web links
 
+## public URL: [https://bill.hidden.com.au/](https://bill.hidden.com.au/)
+
 ```sh
 pnpm create astro@latest -- --template basics
 pnpm astro add tailwind
