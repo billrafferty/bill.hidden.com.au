@@ -5,7 +5,6 @@ pnpm create astro@latest -- --template basics
 pnpm astro add tailwind
 pnpm astro add astro-icon
 pnpm add @iconify-json/simple-icons
-pnpm dlx @tinacms/cli@latest init
 
 ```
 
@@ -28,10 +27,8 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── Links.astro
 │   ├── layouts/
 │   │   └── Layout.astro
-│   │── pages/
-│   │   └── index.astro
-│   └── tina/
-│       └── config.ts
+│   └── pages/
+│       └── index.astro
 └── package.json
 ```
 
@@ -53,6 +50,15 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Other bits
+Using https://www.astroicon.dev/guides/styling/ with [Simple Icons](https://icones.js.org/collection/simple-icons)
+
+Deploying Astro Site to GitHub Pages with Actions [Guid](https://docs.astro.build/en/guides/deploy/github/)
+
+I'm also looking at using https://pagescms.org/ for content management updates after trying out tina.io which looks good but had to be run locally as the admin could not run on static pages.
+
+
 
 ## 👀 Want to learn more?
 
