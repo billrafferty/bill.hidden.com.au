@@ -1,6 +1,6 @@
 # Astro build page of Bill Rafferty's web links
 
-## public URL: ![https://bill.hidden.com.au/](https://bill.hidden.com.au/)
+## public URL: [https://bill.hidden.com.au/](https://bill.hidden.com.au/)
 
 ```sh
 pnpm create astro@latest -- --template basics
@@ -9,8 +9,8 @@ pnpm astro add astro-icon
 pnpm add @iconify-json/simple-icons
 
 ```
-## Recources used
-- ![Free SVG Backgrounds and Patterns](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/)
+## Other online resources used
+- [Free SVG Backgrounds and Patterns](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/)
 - [Simple Icons](https://simpleicons.org/)
 
 
