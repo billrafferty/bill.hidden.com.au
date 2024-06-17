@@ -1,6 +1,6 @@
 # Astro build page of Bill Rafferty's web links
 
-## public URL: [https://bill.hidden.com.au/](https://bill.hidden.com.au/)
+## public URL: ![https://bill.hidden.com.au/](https://bill.hidden.com.au/)
 
 ```sh
 pnpm create astro@latest -- --template basics
@@ -9,10 +9,9 @@ pnpm astro add astro-icon
 pnpm add @iconify-json/simple-icons
 
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Recources used
+- ![Free SVG Backgrounds and Patterns](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/)
+- [Simple Icons](https://simpleicons.org/)
 
 
 ## 🚀 Project Structure
@@ -69,11 +68,11 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ```text
 Another project on;
-                                                             
-    ##    ##  ##  ######   ######   ######  ####    ##       
-    ##    ##  ##  ##   ##  ##   ##  ##      ## ##   ##       
-    ########  ##  ##   ##  ##   ##  ####    ##  ##  ##       
-    ##    ##  ##  ##   ##  ##   ##  ##      ##   ## ##       
+
+    ##    ##  ##  ######   ######   ######  ####    ##
+    ##    ##  ##  ##   ##  ##   ##  ##      ## ##   ##
+    ########  ##  ##   ##  ##   ##  ####    ##  ##  ##
+    ##    ##  ##  ##   ##  ##   ##  ##      ##   ## ##
     ##    ##  ##  ######   ######   ######  ##    ####.com.au
 
 ```
