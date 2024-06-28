@@ -13,17 +13,18 @@ const links = await Astro.glob("../links/*.md");
     </h1>
     <p class="instructions">
       Please click any link bellow... <em>obvs!</em>
-    <ul role="list" class="link-Links-grid">
-    {links.map((link) => (
-        <Links 
-            key={link.url} /* Add a unique key prop for React's list rendering */
-            href={link.frontmatter.href}
-            title={link.frontmatter.title}
-            body={link.rawContent()}
-            icon={link.frontmatter.icon} 
-        />
-    ))}
-    </ul>
+      <ul role="list" class="link-Links-grid">
+        {
+          links.map((link) => (
+            <Links
+              href={link.frontmatter.href}
+              title={link.frontmatter.title}
+              body={link.rawContent()}
+              icon={link.frontmatter.icon}
+            />
+          ))
+        }
+      </ul>
     </p>
   </main>
 
