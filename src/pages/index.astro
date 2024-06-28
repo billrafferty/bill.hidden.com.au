@@ -21,7 +21,7 @@ const links = await Astro.glob("../links/*.md");
             key={link.url} /* Add a unique key prop for React's list rendering */
             href={link.frontmatter.href}
             title={link.frontmatter.title}
-            body={link.rawContent}
+            body={link.rawContent()}
             icon={link.frontmatter.icon} 
         />
     ))}
