@@ -10,11 +10,11 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.7.0",
-		"@astrojs/mdx": "^3.1.2",
+		"@astrojs/check": "^0.9.3",
+		"@astrojs/mdx": "^3.1.6",
 		"@astrojs/tailwind": "^5.1.0",
 		"@iconify-json/simple-icons": "^1.1.103",
-		"astro": "^4.10.0",
+		"astro": "^4.15.6",
 		"astro-icon": "^1.1.0",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5"
