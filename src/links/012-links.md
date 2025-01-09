@@ -4,4 +4,4 @@ title: "bill.hidden.com.au"
 icon: "simple-icons:astro"
 ---
 
-The repo for this page hosted on Github page and build with Astro
+The repo for this page hosted on Github Pages and build with Astro

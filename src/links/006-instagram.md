@@ -5,4 +5,4 @@ icon: "simple-icons:instagram"
 ---
 
 
- Instagram is mostly personal stuff.
+ Instagram is mostly personal stuff

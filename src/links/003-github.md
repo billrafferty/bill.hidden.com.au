@@ -1,8 +1,9 @@
 ---
 href: "https://github.com/billrafferty"
-title: "My Github page"
+title: "Github Profile"
 icon: "simple-icons:github"
 ---
 
 
- Come check out my code and projects.
+ My Profile page and main git repo space.
+ 
