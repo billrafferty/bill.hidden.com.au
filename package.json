@@ -11,19 +11,25 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/mdx": "^4.3.5",
 		"@astrojs/tailwind": "^5.1.5",
-		"@iconify-json/simple-icons": "^1.2.39",
-		"astro": "^5.9.4",
+		"@iconify-json/simple-icons": "^1.2.52",
+		"astro": "^5.13.8",
 		"astro-icon": "^1.1.5",
 		"culori": "^4.0.2",
 		"qrcode": "^1.5.4",
 		"tailwindcss": "^3.4.17",
-		"typescript": "^5.8.3"
+		"typescript": "^5.9.2"
 	},
 	"devDependencies": {
 		"@types/culori": "^4.0.1",
-		"@types/node": "^20.19.1",
+		"@types/node": "^20.19.17",
 		"@types/qrcode": "^1.5.5"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"sharp"
+		]
 	}
 }

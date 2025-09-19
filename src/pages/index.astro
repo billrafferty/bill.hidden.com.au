@@ -2,7 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Links from "../components/Links.astro";
 import { Icon } from "astro-icon/components";
-const links = await Astro.glob("../links/*.md");
+
+const linkModules = import.meta.glob("../links/*.md");
+const links = await Promise.all(
+  Object.values(linkModules).map(fn => fn())
+) as Array<{
+  frontmatter: {
+    href: string;
+    title: string;
+    icon: string;
+  };
+  rawContent: () => string;
+}>;
 ---
 
 <Layout title="Links 🔗">
