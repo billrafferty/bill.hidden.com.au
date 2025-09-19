@@ -1,22 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
+import QRCode from "./QRCode.astro";
+
 interface Props {
   title: string;
   href: string;
   body: string;
   icon: string;
+  showQR?: boolean;
+  qrSize?: number;
 }
 
-const { href, title, body, icon } = Astro.props;
+const { href, title, body, icon, showQR = false, qrSize = 80 } = Astro.props;
 ---
 
 <li class="link-card">
   <a href={href}>
-    <h2>
+    <h2 aria-label={title}>
       <Icon name={icon} />
       {title}
-      <span>&rarr;</span>
     </h2>
+    {showQR && (
+      <div class="qr-code-container">
+        <QRCode data={href} size={qrSize} className="qr-code" />
+      </div>
+    )}
     <p>
       {body}
     </p>
@@ -38,20 +46,39 @@ const { href, title, body, icon } = Astro.props;
       width: 100%;
       text-decoration: none;
       line-height: 1.4;
-      padding: calc(1.5rem - 1px);
+      padding: calc(1rem - 1px);
       border-radius: 8px;
       color: cmyk(0, 0, 0.02, 0.02);
       background-color: #043c00;
       opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
     }
     h2 {
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 0.8rem;
+      min-height: 2.5rem;
       transition: color 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex;
+      align-items: flex-start;
+    }
+    .qr-code-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      padding: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+      flex-shrink: 0;
     }
     p {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
+      font-size: 0.7rem;
+      margin: 0;
+      margin-top: 0;
     }
     .link-card:is(:hover, :focus-within) {
       background-position: 0;
@@ -63,8 +90,29 @@ const { href, title, body, icon } = Astro.props;
     [data-icon] {
       font-size: 2rem;
       color: var(--brand-color);
-      float: left;
       margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    .qr-code-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+    }
+    .qr-code {
+      border-radius: 4px;
+      background-color: white;
+      padding: 0.25rem;
+    }
+    .qr-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
     }
   </style>
 </li>

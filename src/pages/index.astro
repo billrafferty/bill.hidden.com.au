@@ -7,25 +7,35 @@ const links = await Astro.glob("../links/*.md");
 
 <Layout title="Links 🔗">
   <main>
-    <Icon name="logo" />
-    <h1>
-      Bill's Links <span class="text-gradient">list</span>
+    <Icon name="logo"/>
+    <h1 class="instructions">
+      Bill's top {links.length} Links <span class="text-gradient">list</span>
     </h1>
-    <p class="instructions">
-      Please click any link bellow... <em>obvs!</em>
       <ul role="list" class="link-Links-grid">
         {
-          links.map((link) => (
-            <Links
-              href={link.frontmatter.href}
-              title={link.frontmatter.title}
-              body={link.rawContent()}
-              icon={link.frontmatter.icon}
-            />
-          ))
+          links.map((link) => {
+            // Show QR codes for phone, email, and web links
+            const showQR = link.frontmatter.href.startsWith('tel:') || 
+                          link.frontmatter.href.startsWith('mailto:') ||
+                          link.frontmatter.href.startsWith('https://') ||
+                          link.frontmatter.href.startsWith('http://');
+            
+            return (
+              <Links
+                href={link.frontmatter.href}
+                title={link.frontmatter.title}
+                body={link.rawContent()}
+                icon={link.frontmatter.icon}
+                showQR={showQR}
+                qrSize={100}
+              />
+            );
+          })
         }
       </ul>
-    </p>
+    <p class="instructions">Please click any link above... <em>obvs!</em><br>
+      <a href="#top" class="back-to-top">↑ Back to top</a></p>
+
   </main>
 
   <style>
@@ -54,7 +64,7 @@ const links = await Astro.glob("../links/*.md");
       z-index: -1;
     }
     h1 {
-      font-size: 1.7rem;
+      font-size: 1.2rem;
       font-weight: 700;
       line-height: 1;
       text-align: center;
@@ -71,7 +81,7 @@ const links = await Astro.glob("../links/*.md");
     }
     .instructions {
       text-align: center;
-      margin-bottom: 1rem;
+      margin: 1rem;
       border: 1px solid rgba(var(--accent-light), 25%);
       background: linear-gradient(
         rgba(var(--accent-dark), 66%),
@@ -97,12 +107,72 @@ const links = await Astro.glob("../links/*.md");
       gap: 1rem;
       padding: 0;
     }
+    
+    /* Force 2 columns on all mobile devices */
+    @media screen and (max-width: 768px) {
+      .link-Links-grid {
+        grid-template-columns: 1fr 1fr !important;
+        grid-auto-flow: row !important;
+        gap: 0.25rem !important;
+      }
+      
+      .link-Links-grid .link-card {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+      
+      .link-Links-grid .link-card > a {
+        padding: 0.75rem !important;
+        min-height: 180px !important;
+      }
+      
+      .link-Links-grid .qr-code-container {
+        margin: 0.5rem 0 !important;
+        padding: 0.5rem !important;
+      }
+    }
     [data-icon="logo"] {
       font-size: 6rem;
       color: var(--brand-color);
-      margin-left: auto;
+      margin-left: -1.5rem;
       margin-right: auto;
       padding: 10px;
+      float: left;
+      top: 1rem;
+      position: absolute;
+    }
+    @media screen and (max-width: 475px) {
+      [data-icon="logo"] {
+        position: relative;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+    }
+    
+    .back-to-top {
+      display: inline-block;
+      color: rgb(var(--accent-light));
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(var(--accent-light), 0.3);
+      border-radius: 6px;
+      background: rgba(var(--accent-dark), 0.2);
+      transition: all 0.3s ease;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+    
+    .back-to-top:hover {
+      background: rgba(var(--accent-light), 0.1);
+      border-color: rgba(var(--accent-light), 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(var(--accent-light), 0.2);
     }
   </style>
 </Layout>

@@ -1,5 +1,5 @@
 ---
-href: "http://patorjk.com/software/taag/#p=display&f=Bloody&t=hello%0Aworld"
+href: "https://patorjk.com/software/taag/"
 title: "TAAG"
 icon: "simple-icons:bitwig"
 ---

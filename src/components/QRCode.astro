@@ -1,0 +1,48 @@
+---
+import QR from 'qrcode';
+import { formatHex, oklch } from 'culori';
+
+interface Props {
+  data: string;
+  size?: number;
+  className?: string;
+  foreground?: string;
+  background?: string;
+  robustness?: 'L' | 'M' | 'Q' | 'H';
+}
+
+const { 
+  data, 
+  size = 200, 
+  className = '', 
+  foreground,
+  background,
+  robustness = 'M' 
+} = Astro.props;
+
+// Default colors that work well with dark themes (similar to shadcn defaults)
+const defaultForeground = foreground || formatHex(oklch({ mode: 'oklch', l: 0.21, c: 0.006, h: 285.885 })); // Dark color
+const defaultBackground = background || formatHex(oklch({ mode: 'oklch', l: 0.985, c: 0, h: 0 })); // Light color
+
+// Generate QR code SVG at build time
+const qrSvg = await QR.toString(data, {
+  type: 'svg',
+  color: {
+    dark: defaultForeground,
+    light: defaultBackground,
+  },
+  width: size,
+  errorCorrectionLevel: robustness,
+  margin: 0,
+});
+---
+
+<div 
+  class:list={[
+    'inline-block',
+    '[&_svg]:w-full [&_svg]:h-full',
+    className
+  ]}
+  style={`width: ${size}px; height: ${size}px;`}
+  set:html={qrSvg}
+/>
