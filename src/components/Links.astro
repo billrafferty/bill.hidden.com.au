@@ -22,7 +22,7 @@ const { href, title, body, icon, showQR = false, qrSize = 80 } = Astro.props;
     </h2>
     {showQR && (
       <div class="qr-code-container">
-        <QRCode data={href} size={qrSize} className="qr-code" />
+        <QRCode data={href} size={qrSize} className="qr-code mobile-qr" />
       </div>
     )}
     <p>
@@ -113,6 +113,18 @@ const { href, title, body, icon, showQR = false, qrSize = 80 } = Astro.props;
       font-size: 0.75rem;
       color: rgba(255, 255, 255, 0.8);
       text-align: center;
+    }
+    @media screen and (max-width: 420px) {
+      .link-card > a {
+      line-height: 1.2;
+      padding: 5px;
+      }
+      [data-icon] {
+      font-size: 2rem;
+      color: var(--brand-color);
+      margin-right: 5px;
+      flex-shrink: 0;
+      }
     }
   </style>
 </li>

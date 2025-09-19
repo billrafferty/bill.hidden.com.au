@@ -38,7 +38,7 @@ const links = await Promise.all(
                 body={link.rawContent()}
                 icon={link.frontmatter.icon}
                 showQR={showQR}
-                qrSize={100}
+                qrSize={120}
               />
             );
           })
@@ -119,12 +119,12 @@ const links = await Promise.all(
       padding: 0;
     }
     
-    /* Force 2 columns on all mobile devices */
+    /* Force 2 columns on all mobile devices with much tighter spacing */
     @media screen and (max-width: 768px) {
       .link-Links-grid {
         grid-template-columns: 1fr 1fr !important;
         grid-auto-flow: row !important;
-        gap: 0.25rem !important;
+        gap: 0.125rem !important;
       }
       
       .link-Links-grid .link-card {
@@ -133,13 +133,27 @@ const links = await Promise.all(
       }
       
       .link-Links-grid .link-card > a {
-        padding: 0.75rem !important;
-        min-height: 180px !important;
+        padding: 0.5rem !important;
+        min-height: 140px !important;
       }
       
       .link-Links-grid .qr-code-container {
-        margin: 0.5rem 0 !important;
-        padding: 0.5rem !important;
+        margin: 0.25rem 0 !important;
+        padding: 0.25rem !important;
+      }
+      
+      .link-Links-grid h2 {
+        font-size: 0.7rem !important;
+        min-height: 2rem !important;
+      }
+      
+      .link-Links-grid p {
+        font-size: 0.6rem !important;
+      }
+      
+      .link-Links-grid [data-icon] {
+        font-size: 1.5rem !important;
+        margin-right: 0.5rem !important;
       }
     }
     [data-icon="logo"] {
@@ -163,7 +177,10 @@ const links = await Promise.all(
       h1 {
         font-size: 1.5rem;
       }
-      
+      main {
+        margin: auto;
+        padding: 0;
+      }
     }
     
     .back-to-top {
